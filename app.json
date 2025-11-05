@@ -4,10 +4,8 @@
     "slug": "territory-runner",
     "version": "0.1.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#007AFF"
     },
@@ -27,7 +25,6 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#007AFF"
       },
       "package": "com.yourcompany.territoryrunner",
@@ -38,7 +35,6 @@
       ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
     },
     "plugins": [
       [

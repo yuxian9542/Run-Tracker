@@ -24,11 +24,20 @@ export function useGPS(): UseGPSReturn {
     try {
       setError(null);
 
-      // 请求位置权限
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
+      // 请求前台位置权限
+      const { status: foregroundStatus } = await Location.requestForegroundPermissionsAsync();
+      if (foregroundStatus !== 'granted') {
         setError('位置权限被拒绝');
         return;
+      }
+
+      // 请求后台位置权限（iOS 需要）
+      // 如果后台权限被拒绝，仍然允许前台跟踪
+      try {
+        await Location.requestBackgroundPermissionsAsync();
+      } catch (bgError) {
+        // 后台权限被拒绝不影响前台跟踪
+        console.log('Background location permission not granted, continuing with foreground tracking');
       }
 
       // 开始监听位置变化

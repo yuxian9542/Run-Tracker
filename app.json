@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "Territory Runner",
+    "slug": "territory-runner",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#007AFF"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.territoryrunner",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Territory Runner 需要访问您的位置来记录跑步轨迹和计算距离。",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Territory Runner 需要持续访问您的位置来准确记录跑步数据。",
+        "UIBackgroundModes": [
+          "location"
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#007AFF"
+      },
+      "package": "com.yourcompany.territoryrunner",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION"
+      ]
+    },
+    "web": {
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Territory Runner 需要访问您的位置来记录跑步轨迹。"
+        }
+      ]
+    ]
+  }
+}
